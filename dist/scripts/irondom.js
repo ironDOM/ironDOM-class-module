@@ -38,6 +38,34 @@ var ironDOM = (function (ironDOM)  {
     toggleClass = function(element, className) {
       return element.classList.toggle(className);
     }
+  } else {
+    hasClass = function(element, classN){
+      if(element.className === classN) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    addClass = function(element, classN) {
+      if (!hasClass(element, classN)) {
+        element.className += ' ' +classN;
+      }
+    };
+
+    removeClass = function(element, classN) {
+      if (hasClass(element, classN)) {
+        element.className = element.className.replace(classN);
+      }
+    };
+
+    toggleClass = function(element, classN) {
+      if(hasClass(element, classN)) {
+        removeClass(element, classN);
+      } else {
+        addClass(element, classN)
+      }
+    }
   }
 
   ironDOM.hasClass = function(element, className) {

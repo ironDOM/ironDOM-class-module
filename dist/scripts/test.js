@@ -9,7 +9,6 @@
       myButton2 = document.querySelector('#button2'),
       myButton3 = document.querySelector('#button3');
 
-
   myButton.addEventListener("click", function() {
     ironDOM.toggleClass(mytoggleIDelem, ['green']);
     ironDOM.toggleClass(mytoggleIDelem, ['red']);
@@ -27,27 +26,31 @@
   });
 
   ironDOM.multiElements(listItems, function () {
-
+    console.log('this: ', this);
     ironDOM.addClass(this, ['ironDOM']);
 
     if(ironDOM.hasClass(this, ['addClass'])) {
-
+      console.log('found addClass');
       ironDOM.removeClass(this, ['red']);
       ironDOM.addClass(this, ['green']);
 
     } else if (ironDOM.hasClass(this, ['removeClass'])) {
-
+      console.log('found removeClass');
       ironDOM.removeClass(this, ['red']);
       ironDOM.addClass(this, ['green']);
 
     } else if (ironDOM.hasClass(this, ['hasClass'])) {
-
+      console.log('found hasClass');
       ironDOM.removeClass(this, ['red']);
       ironDOM.addClass(this, ['green']);
 
+    } else if (ironDOM.hasClass(this, ['toggleClass'])) {
+      console.log('found toggleClass');
+      ironDOM.removeClass(this, ['red']);
+      ironDOM.addClass(this, ['green']);
     }
-  });
 
+  });
 
 })(window, document, ironDOM);
 
