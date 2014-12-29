@@ -44,6 +44,7 @@ var ironDOM = (function (ironDOM)  {
         return true;
       } else {
         return false;
+      //  add comment
       }
     };
 
