@@ -38,5 +38,8 @@ div.test {
     &.testing {
       border: 1px red solid;
     }
+    &.grey {
+      color: grey;
+    }
   }
 }
